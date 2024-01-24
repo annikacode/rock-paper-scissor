@@ -1,6 +1,6 @@
 function getComputerChoice() {
     // A random number between 0, 1 and 2 is generated
-    const randomNUm = Math.floor(Math.random() * 3)
+    const randomNUm = Math.floor(Math.random() * 3);
 
     // The random numbers are mapped to either rock, paper or scissors
 
@@ -16,3 +16,4 @@ function getComputerChoice() {
 
 const computerChoice = getComputerChoice();
 console.log("Computer's choice:" + " " + computerChoice);
+
