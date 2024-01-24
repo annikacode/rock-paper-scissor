@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     // A random number between 0, 1, and 2 is generated
     const randomNum = Math.floor(Math.random() * 3);
@@ -41,9 +44,7 @@ function playRound(playerSelection, computerSelection) {
 
 // New function to create game rounds 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
+    
     for (let round = 1; round <= 5; round++) {
         const playerSelection = prompt("Rock, Paper, Scissor?");
         const computerSelection = getComputerChoice();
@@ -72,3 +73,6 @@ if (playerScore > computerScore) {
 } else {
     console.log("No winner, it's a tie!")
 }
+
+// game function is called to start the game 
+game();
