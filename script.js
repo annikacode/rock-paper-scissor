@@ -60,6 +60,15 @@ function game() {
             playerScore++;
         } else if (result.includes('lose')) {
             computerScore++;
-        };
-        
+        };  
+    }
+}
+
+// To determine the winner after 5 rounds of gameplay
+if (playerScore > computerScore) {
+    console.log("Congratulations! You win!")
+} else if (playerScore < computerScore) {
+    console.log("You lose!")
+} else {
+    console.log("No winner, it's a tie!")
 }
