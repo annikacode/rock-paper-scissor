@@ -54,5 +54,12 @@ function game() {
 
         const result = playRound(playerSelection, computerSelection);
         console.log(result);
-    }
+
+        // Update scoreds as game progresses
+        if (result.includes('win')) {
+            playerScore++;
+        } else if (result.includes('lose')) {
+            computerScore++;
+        };
+        
 }
