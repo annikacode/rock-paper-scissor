@@ -39,4 +39,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// New function to create game rounds 
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
+    for (let round = 1; round <= 5; round++) {
+        const playerSelection = prompt("Rock, Paper, Scissor?");
+        const computerSelection = getComputerChoice();
+
+        console.log(`Round ${round}:`);
+        console.log(`You chose ${playerSelection}`);
+        console.log(`Computer chose ${computerSelection}`);
+
+        const result = playRound(playerSelection, computerSelection);
+        console.log(result);
+    }
+}
