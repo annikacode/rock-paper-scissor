@@ -29,7 +29,13 @@ playerSelection = playerSelection.toLowerCase();
  }
 
  // If the player wins 
+if (
+    (playerSelection === 'rock' && computerChoice === 'scissors') ||
+    (playerSelection === 'paper' && computerChoice === 'rock') ||
+    (playerSelection === 'scissors' && computerChoice === 'paper')
+    ) {
+    return 'You win! ${playerSelection} beats ${computerChoice}';
+    }
 
- 
 
 }
