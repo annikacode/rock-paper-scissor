@@ -17,3 +17,13 @@ function getComputerChoice() {
 const computerChoice = getComputerChoice();
 console.log("Computer's choice:" + " " + computerChoice);
 
+//Add function to play single round of rock, paper, scissors
+function playRound(playerSelection, computerChoice) {
+
+// Selection is made case-insensitive
+playerSelection = playerSelection.toLowerCase();
+
+// Check for a tie 
+ if 
+
+}
