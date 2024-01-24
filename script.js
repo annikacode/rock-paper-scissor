@@ -37,5 +37,11 @@ if (
     return 'You win! ${playerSelection} beats ${computerChoice}';
     }
 
+// If player loses 
+return 'You lose! ${computerChoice} beats ${playerSelection}'
 
 }
+
+const playerSelection = 'Rock'
+
+console.log(playRound(playerSelection, computerChoice))
