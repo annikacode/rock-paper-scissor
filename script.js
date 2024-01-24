@@ -24,6 +24,12 @@ function playRound(playerSelection, computerChoice) {
 playerSelection = playerSelection.toLowerCase();
 
 // Check for a tie 
- if 
+ if (playerSelection === computerChoice) {
+    return "It's a tie! Try again."
+ }
+
+ // If the player wins 
+
+ 
 
 }
