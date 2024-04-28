@@ -42,29 +42,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// New function to create game rounds 
+// New function to create game rounds until player quits
 function game() {
-    
-    for (let round = 1; round <= 5; round++) {
-        const playerSelection = prompt("Rock, Paper, Scissor?");
+    let continuePlaying = true;
+
+    while (continuePlaying) {
+        const playerSelection = prompt("Rock, Paper, Scissor? Type 'quit' to end the game.");
+
+        // Check if the player wants to quit
+        if (playerSelection.toLowerCase() === 'quit') {
+            continuePlaying = false;
+            break; // Exit the loop
+        }
+
         const computerSelection = getComputerChoice();
 
-        console.log(`Round ${round}:`);
         console.log(`You chose ${playerSelection}`);
         console.log(`Computer chose ${computerSelection}`);
 
         const result = playRound(playerSelection, computerSelection);
         console.log(result);
 
-        // Update scoreds as game progresses
+        // Update scores as game progresses
         if (result.includes('win')) {
             playerScore++;
         } else if (result.includes('lose')) {
             computerScore++;
-        };  
+        }
     }
 }
-
 // To determine the winner after 5 rounds of gameplay
 if (playerScore > computerScore) {
     console.log("Congratulations! You win!")
