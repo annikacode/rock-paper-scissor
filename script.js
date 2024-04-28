@@ -45,16 +45,13 @@ function playRound(playerSelection, computerSelection) {
 // Add event listeners to the buttons
 
 document.getElementById('rock').addEventListener('click', function() {
-    const result = playRound('rock', getComputerChoice());
-    console.log(result);
+    const result = playRound('rock', getComputerChoice())
 });
 
 document.getElementById('paper').addEventListener('click', function() {
-    const result = playRound('paper', getComputerChoice());
-    console.log(result);
+    const result = playRound('paper', getComputerChoice())
 });
 
 document.getElementById('scissors').addEventListener('click', function() {
-    const result = playRound('scissors', getComputerChoice());
-    console.log(result)
+    const result = playRound('scissors', getComputerChoice())
 });
