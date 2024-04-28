@@ -16,8 +16,10 @@ function getComputerChoice() {
     }
 }
 
-// Add function to play a single round of rock, paper, scissors
+// Function to include rounds and accept playerSelection as a parameter
 function playRound(playerSelection, computerSelection) {
+    const resultDisplay = document.getElementById('result');
+    const scoreDisplay= document.getElementById('score')
     // Selection is made case-insensitive
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
