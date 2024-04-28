@@ -8,19 +8,18 @@ function getComputerChoice() {
     // The random numbers are mapped to either rock, paper, or scissors
     switch (randomNum) {
         case 0:
-            return 'Rock';
+            return 'rock';
         case 1:
-            return 'Paper';
+            return 'paper';
         case 2:
-            return 'Scissors';
+            return 'scissors';
     }
 }
 
 // Function to include rounds and accept playerSelection as a parameter
 function playRound(playerSelection, computerSelection) {
     const resultDisplay = document.getElementById('result');
-    const scoreDisplay= document.getElementById('score')
-    
+    const scoreDisplay = document.getElementById('score');
 
     // Check for a tie
     if (playerSelection === computerSelection) {
@@ -34,37 +33,44 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
         resultDisplay.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        playerScore++;
     }
 
     // If player loses
     else {
         resultDisplay.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
+        computerScore++;
+    }
+
+    // Update the display of the score
+    scoreDisplay.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
+
+    // Check if computer or player has reached 5 points
+    if (playerScore === 5) {
+        resultDisplay.textContent = "Congratulations! You win the game!";
+        disableButtons();
+    } else if (computerScore === 5) {
+        resultDisplay.textContent = "You lost! Try again?";
+        disableButtons();
     }
 }
 
-// Update the display of the score
-scoreDisplay.textContent = `Player: ${playerScore} - Computer: ${computerScore}`
-
-
-// Check if computer or player has reached 5 points
-if (playerScore === 5) {
-    resultDisplay.textContent = "Congratulations! You win the game!";
-} else if (computerScore === 5) {
-    resultDisplay.textContent = "You lost! Try again?";
-
-}
-
-
 // Add event listeners to the buttons
-
 document.getElementById('rock').addEventListener('click', function() {
-    const result = playRound('rock', getComputerChoice())
+    playRound('rock', getComputerChoice());
 });
 
 document.getElementById('paper').addEventListener('click', function() {
-    const result = playRound('paper', getComputerChoice())
+    playRound('paper', getComputerChoice());
 });
 
 document.getElementById('scissors').addEventListener('click', function() {
-    const result = playRound('scissors', getComputerChoice())
+    playRound('scissors', getComputerChoice());
 });
+
+// Function to disable buttons when the game is over
+function disableButtons() {
+    document.getElementById('rock').disabled = true;
+    document.getElementById('paper').disabled = true;
+    document.getElementById('scissors').disabled = true;
+}
