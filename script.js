@@ -20,13 +20,11 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     const resultDisplay = document.getElementById('result');
     const scoreDisplay= document.getElementById('score')
-    // Selection is made case-insensitive
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    
 
     // Check for a tie
     if (playerSelection === computerSelection) {
-        return "It's a tie! Try again.";
+        resultDisplay.textContent = "It's a tie! Try again.";
     }
 
     // If the player wins
@@ -35,14 +33,27 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        resultDisplay.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
     }
 
     // If player loses
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+        resultDisplay.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
     }
 }
+
+// Update the display of the score
+scoreDisplay.textContent = `Player: ${playerScore} - Computer: ${computerScore}`
+
+
+// Check if computer or player has reached 5 points
+if (playerScore === 5) {
+    resultDisplay.textContent = "Congratulations! You win the game!";
+} else if (computerScore === 5) {
+    resultDisplay.textContent = "You lost! Try again?";
+
+}
+
 
 // Add event listeners to the buttons
 
